@@ -2,9 +2,13 @@
 // ============================================================ //
 // ============================================================ //
 
-$primary: #F1C40F;
-$secondary: #303030;
-$background: #FEFEFE;
+$primary: #f4d43c;
+$secondary: #222831;
+$background: #EEEEEE;
+$blue: #008fbd;
+$orange: #e85c25;
+$dark-gray: #DEDEDE;
+
 
 /* ============================================================ */
 /* Base */
@@ -37,7 +41,7 @@ p {
 }
 
 a {
-    color: $primary;
+    color: $orange;
     text-decoration: none;
 }
 
@@ -106,7 +110,8 @@ code {
     padding: 2px 4px;
     font-size: 90%;
     border-radius: 4px;
-    background-color: #f1f0ea;
+    background-color: $dark-gray;
+    font-family: 'Fira Code', monospace;
 }
 
 hr {
@@ -245,10 +250,10 @@ table {
     a {
         float: left;
         background: $primary;
-        color: #FEFEFE;
+        color: $secondary;
         padding: 5px 10px 6px;
 
-        &:hover { background: $secondary; }
+        &:hover { background: $secondary; color: $primary; }
     }
 }
 .site-logo {
@@ -269,7 +274,10 @@ table {
     font-weight: 700;
     margin: 0 10px;
 
-    a:hover { color: #424242; }
+    a {
+        color: $blue;
+        &:hover { color: $orange; background: $dark-gray; }
+    }
 }
 
 /* ============================================================ */
@@ -309,7 +317,7 @@ table {
     margin: 25px 0 0;
 
     a { color: #AEADAD; }
-    a:hover { color: $primary; }
+    a:hover { color: $orange; }
 }
 
 .post-line {
