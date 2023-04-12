@@ -2,7 +2,7 @@
 // ============================================================ //
 // ============================================================ //
 
-$primary: #F03838;
+$primary: #F1C40F;
 $secondary: #303030;
 $background: #FEFEFE;
 
@@ -202,13 +202,13 @@ table {
 
 .button-square {
     background: $primary;
-    color: #FFF;
+    color: $secondary;
     float: left;
     font-size: 17px;
     margin: 0 0 0 10px;
     padding: 3px 8px 4px;
 
-    &:hover { background: $secondary; }
+    &:hover { background: $secondary; color: $primary; }
 }
 
 .error {
@@ -367,7 +367,7 @@ table {
 
     a {
         background: $primary;
-        color: #FFF;
+        color: $secondary;
         display: inline-block;
         font-size: 16px;
         margin-left: 5px;
@@ -376,7 +376,7 @@ table {
         text-align: center;
     }
 
-    a:hover { background: $secondary; }
+    a:hover { background: $secondary; color: $primary; }
 }
 
 .post-navigation {
