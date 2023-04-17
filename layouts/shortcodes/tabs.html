@@ -1,0 +1,48 @@
+{{- if not (.Page.Scratch.Get "no-tab-script") -}}
+<script>
+    function toggleActive(element, condition) {
+        if (condition) {
+        element.classList.add("active");
+        } else {
+        element.classList.remove("active");
+        }
+    }
+    function switchTab(groupId, name) {
+        const tabItems = document.querySelectorAll(
+        `.tab-item[data-tab-group=${groupId}]`
+        );
+        const tabButtons = document.querySelectorAll(
+        `.tab-button[data-tab-group=${groupId}]`
+        );
+        [...tabItems, ...tabButtons].forEach(
+        (item) => toggleActive(item, item.dataset.tabItem === name)
+        );
+    }
+</script>
+{{ .Page.Scratch.Set "no-tab-script" "true" }}
+{{- end -}}
+{{/* HTML */}}
+{{- with .Inner }}{{ end -}}
+{{- $groupId := .Get "id" | default "default" -}}
+<div class="tab-container box">
+    <div class="tab-nav">
+    {{- range $idx, $tab := .Scratch.Get "tabs" -}}
+        <button
+        data-tab-item="{{ .name }}"
+        data-tab-group="{{ $groupId }}"
+        class='tab-button {{ cond (eq $idx 0) "active" "" }}'
+        onclick="switchTab('{{ $groupId }}','{{ .name }}')"
+        >{{ .name }}</button>
+    {{- end -}}
+    </div>
+    <div class="tab-content">
+    {{- range $idx, $tab := .Scratch.Get "tabs" -}}
+        <div 
+        data-tab-item="{{ .name }}"
+        data-tab-group="{{ $groupId }}"
+        class='tab-item {{ cond (eq $idx 0) "active" "" }}'>
+        {{ .content }}
+        </div>
+    {{- end -}}
+    </div>
+</div>

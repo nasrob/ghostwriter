@@ -1,0 +1,19 @@
+{{- $isCopy := true -}}
+{{- if isset .Attributes "copy" -}}
+    {{- $isCopy = .Attributes.copy -}}
+{{- end -}}
+<div class="code-container">
+    <div class="code-block">
+        {{- with (index .Attributes "path") -}}
+            <div class="code-path">{{ . }}
+                {{- if $isCopy -}}
+                    <div class="code-copy">
+                        <button class="code-copy-btn" onclick="copyToClipboard(this)">Copy</button>
+                        <span class="code-copy-feedback">Copied!</span>
+                    </div>
+                {{- end -}}
+            </div>
+        {{- end -}}
+        {{- highlight .Inner .Type .Options -}}
+    </div>
+</div>
