@@ -1,3 +1,23 @@
 @import "~normalize.css/normalize.css";
 @import "style.scss";
 @import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+
+.code-container {
+    .code-block {
+        .code-path {
+            background: $primary;
+            color: $secondary;
+            display: inline-block;
+        }
+    }
+}
+
+.tab-item {
+    display: none;
+}
+.tab-item.active {
+    display: block;
+}
+.tab-button.active {
+    font-weight: bold;
+}
