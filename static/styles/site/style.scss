@@ -114,6 +114,12 @@ code {
     font-family: 'Fira Code', monospace;
 }
 
+.code-path {
+    background: $secondary;
+    color: $blue;
+    display: inline-block;
+}
+
 hr {
     border: none;
     border-bottom: 1px dotted #303030;
