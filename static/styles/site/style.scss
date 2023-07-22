@@ -435,7 +435,7 @@ table {
         padding: 20px 5px;
 
         &:hover {
-            background: #FCF5F5;
+            background: $secondary;
             color: $primary;
             padding: 20px 12px;
 
@@ -696,6 +696,7 @@ table {
     .post-stub a:hover {
         padding-top: 12px;
         padding-bottom: 12px;
+        background-color: $secondary;
     }
 
     .share {
